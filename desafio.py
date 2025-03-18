@@ -155,6 +155,12 @@ def main():
 
             value = input("Digite o valor do saque: ")
 
+            try:
+                value = float(value)
+                if(value <= 0):
+                    print("Valor tem que ser maior que 0")
+            except ValueError:
+                continue
             
             balance, statement, operations_today = withdraw(
                 value=float(value),
